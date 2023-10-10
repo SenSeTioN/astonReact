@@ -16,7 +16,10 @@
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
+  "homepage": "https://sensetion.github.io/astonReact/",
   "scripts": {
+    "deploy": "gh-pages -d build",
+    "predeploy": "yarn run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -41,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.0.0",
     "sass": "^1.69.1"
   }
 }
