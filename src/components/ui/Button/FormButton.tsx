@@ -1,7 +1,9 @@
 import { FormButtonProps } from '../../types/types'
 import './FormButton.scss'
 
-const FormButton: React.FC<FormButtonProps> = ({ disabled, text, type, onClick }) => {
+const FormButton = (props: FormButtonProps) => {
+  const { disabled, text, type, onClick } = props
+
   return (
     <button className='btn' type={type} disabled={disabled} onClick={onClick}>
       {text}

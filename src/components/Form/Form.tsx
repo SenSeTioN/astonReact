@@ -12,7 +12,7 @@ class Form extends Component<FormProps, IFormState> {
       inputValue: '',
       disableSubmit: false,
     }
-    this.inputRef = React.createRef<HTMLInputElement>()
+    this.inputRef = React.createRef()
     this.focusTextInput = this.focusTextInput.bind(this)
   }
 
@@ -30,7 +30,8 @@ class Form extends Component<FormProps, IFormState> {
 
   handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
-    const disableWord = value.includes('реакт')
+    const regex: any = /^реакт$/i
+    const disableWord = value.includes(regex)
 
     this.setState({ inputValue: value, disableSubmit: disableWord })
   }
