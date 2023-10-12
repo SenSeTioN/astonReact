@@ -1,20 +1,19 @@
-import { ChangeEvent, Component, FormEvent } from 'react'
+import React, { ChangeEvent, Component, FormEvent } from 'react'
+import { FormProps, IFormState, InputRefType } from '../types/types'
+import FormButton from '../ui/Button/FormButton'
 import './Form.scss'
 
-type FormProps = {
-  propValue: string
-}
+class Form extends Component<FormProps, IFormState> {
+  inputRef: InputRefType
 
-type FormState = {
-  inputValue: string
-}
-
-class Form extends Component<FormProps, FormState> {
   constructor(props: FormProps) {
     super(props)
     this.state = {
       inputValue: '',
+      disableSubmit: false,
     }
+    this.inputRef = React.createRef<HTMLInputElement>()
+    this.focusTextInput = this.focusTextInput.bind(this)
   }
 
   componentDidMount() {
@@ -30,13 +29,19 @@ class Form extends Component<FormProps, FormState> {
   }
 
   handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    this.setState({ inputValue: event.target.value })
+    const value = event.target.value
+    const disableWord = value.includes('реакт')
+
+    this.setState({ inputValue: value, disableSubmit: disableWord })
   }
 
   handleSubmit = (event: FormEvent) => {
     event.preventDefault()
-    console.log('Form - value:', this.state.inputValue)
-    this.setState({ inputValue: '' })
+    this.setState({ inputValue: '', disableSubmit: false })
+  }
+
+  focusTextInput(): void {
+    this.inputRef.current?.focus()
   }
 
   render() {
@@ -51,11 +56,13 @@ class Form extends Component<FormProps, FormState> {
           onChange={this.handleChange}
           placeholder='Введите текст'
           className='input'
+          ref={this.inputRef}
         />
-        <button className='btn' type='submit'>
-          Отправить
-        </button>
-        <p>Prop value: {propValue}</p>
+        <FormButton disabled={this.state.disableSubmit} text='Отправить' type='submit' />
+        <FormButton text='Фокус на input' type='button' onClick={this.focusTextInput} />
+
+        {this.state.disableSubmit && <p style={{ color: 'red' }}>Текст не должен содержать "реакт"</p>}
+        <p>ParentProp value: {propValue}</p>
       </form>
     )
   }
