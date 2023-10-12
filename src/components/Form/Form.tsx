@@ -1,6 +1,6 @@
 import React, { ChangeEvent, Component, FormEvent } from 'react'
 import { FormProps, IFormState, InputRefType } from '../types/types'
-import FormButton from '../ui/Button/FormButton'
+import FormButton from '../ui/FormButton/FormButton'
 import './Form.scss'
 
 class Form extends Component<FormProps, IFormState> {
@@ -30,8 +30,7 @@ class Form extends Component<FormProps, IFormState> {
 
   handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
-    const regex: any = /^реакт$/i
-    const disableWord = value.includes(regex)
+    const disableWord = value.includes('реакт')
 
     this.setState({ inputValue: value, disableSubmit: disableWord })
   }
