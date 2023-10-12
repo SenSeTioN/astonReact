@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/astonReact/static/css/main.6a85ab15.css",
-    "main.js": "/astonReact/static/js/main.8356f545.js",
+    "main.css": "/astonReact/static/css/main.d3df374a.css",
+    "main.js": "/astonReact/static/js/main.0ae0adc9.js",
     "index.html": "/astonReact/index.html",
-    "main.6a85ab15.css.map": "/astonReact/static/css/main.6a85ab15.css.map",
-    "main.8356f545.js.map": "/astonReact/static/js/main.8356f545.js.map"
+    "main.d3df374a.css.map": "/astonReact/static/css/main.d3df374a.css.map",
+    "main.0ae0adc9.js.map": "/astonReact/static/js/main.0ae0adc9.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a85ab15.css",
-    "static/js/main.8356f545.js"
+    "static/css/main.d3df374a.css",
+    "static/js/main.0ae0adc9.js"
   ]
 }
