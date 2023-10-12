@@ -1,0 +1,23 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  margin-top: 1.5625rem;
+  padding: 1rem;
+
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(15, 193, 233, 0.6);
+  text-align: center;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-style: italic;
+  }
+}
