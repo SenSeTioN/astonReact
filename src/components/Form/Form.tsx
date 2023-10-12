@@ -1,11 +1,11 @@
 import { ChangeEvent, Component, FormEvent } from 'react'
 import './Form.scss'
 
-interface FormProps {
+type FormProps = {
   propValue: string
 }
 
-interface FormState {
+type FormState = {
   inputValue: string
 }
 
