@@ -7,7 +7,7 @@ export interface IFormState {
   disableSubmit: boolean
 }
 
-export interface FormButtonProps {
+export interface IFormButtonProps {
   disabled?: boolean
   text: string
   type: React.ButtonHTMLAttributes<HTMLButtonElement>['type']
@@ -16,7 +16,7 @@ export interface FormButtonProps {
 
 export type InputRefType = React.RefObject<HTMLInputElement>
 
-export interface PostProps {
+export interface IPostProps {
   id: number
   title: string
   userId: number
